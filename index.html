@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stavya Enterprise and Multi Services</title>
+  <meta name="description" content="Stavya Enterprise and Multi Services – Rentals, Real Estate & IT Services in Pune, India." />
+  <style>
+    :root{
+      --primary:#0b5ed7;
+      --dark:#0a2540;
+      --light:#f5f7fb;
+      --text:#2b2f38;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:var(--light);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:auto;padding:0 20px}
+    /* Header */
+    header{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{font-weight:700;font-size:20px}
+    .nav a{margin-left:16px;opacity:.95}
+    .hero{padding:64px 0 72px}
+    .hero h1{font-size:40px;line-height:1.2;margin:0 0 10px}
+    .hero p{font-size:18px;opacity:.95;max-width:720px}
+    .cta{margin-top:22px}
+    .btn{display:inline-block;background:#fff;color:var(--dark);padding:12px 18px;border-radius:8px;font-weight:600;margin-right:10px}
+    .btn.secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{font-size:28px;margin-bottom:10px;color:var(--dark)}
+    .section-sub{color:#5b6374;max-width:720px}
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 10px 24px rgba(10,37,64,.08)}
+    .card h3{margin-top:0;color:var(--dark)}
+    /* About */
+    .about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    .badge{display:inline-block;background:rgba(11,94,215,.1);color:var(--primary);padding:6px 10px;border-radius:999px;font-weight:600;margin-bottom:10px}
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .info p{margin:8px 0}
+    .map{border-radius:14px;overflow:hidden;box-shadow:0 10px 24px rgba(10,37,64,.08)}
+    /* Footer */
+    footer{background:#0a2540;color:#c9d4ff}
+    footer .container{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+    /* Responsive */
+    @media (max-width: 900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .about,.contact{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+    @media (max-width: 520px){
+      .grid{grid-template-columns:1fr}
+      .nav{flex-direction:column;align-items:flex-start}
+      .nav a{margin:8px 12px 0 0}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Stavya Enterprise & Multi Services</div>
+      <div>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="container hero">
+      <h1>Your One‑Stop Solution for Rentals, Real Estate & IT Services</h1>
+      <p>Based in Pune, India — fast response, transparent pricing, and dependable service across vehicle & equipment rentals, property solutions, and IT support.</p>
+      <div class="cta">
+        <a class="btn" href="tel:9359394297">Call Now</a>
+        <a class="btn secondary" href="https://wa.me/919359394297" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">Clear, reliable solutions designed to save you time and money.</p>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Car and Bike Rental" style="width:100%;border-radius:10px;margin-bottom:12px">
+          <h3>🚗 Car & Bike Rental</h3>
+          <p>Well‑maintained vehicles available on daily, weekly, and monthly plans for personal and business needs.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Projector Rental" style="width:100%;border-radius:10px;margin-bottom:12px">
+          <h3>📽️ Projector Rental</h3>
+          <p>High‑quality projectors for meetings, events, presentations, and functions with on‑time delivery.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1560185008-5b7a3a2a3b22" alt="Real Estate Services" style="width:100%;border-radius:10px;margin-bottom:12px">
+          <h3>🏠 Real Estate Services</h3>
+          <p>House rentals, land & house sales, and honest property consultation with transparent dealings.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="IT Services" style="width:100%;border-radius:10px;margin-bottom:12px">
+          <h3>💻 IT Services</h3>
+          <p>IT support, website services, and digital solutions to help businesses operate and grow smoothly.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div>
+        <span class="badge">About Us</span>
+        <h2 class="section-title">Built on Trust & Speed</h2>
+        <p>Stavya Enterprise and Multi Services brings multiple essential services under one roof. Our focus is customer satisfaction, quick response, and fair pricing — whether you need a vehicle, equipment, property help, or IT support.</p>
+        <p><strong>Location:</strong> Pune, India</p>
+      </div>
+      <div class="card">
+        <h3>Why Choose Us</h3>
+        <ul>
+          <li>Fast response & easy communication</li>
+          <li>Transparent pricing</li>
+          <li>Flexible rental plans</li>
+          <li>Professional, local support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact">
+      <div class="card info">
+        <h2 class="section-title">Contact Us</h2>
+        <p><strong>Phone:</strong> 9359394297</p>
+        <p><strong>Email:</strong> stavyaenterprisesandmultiservi@gmail.com</p>
+        <p><strong>Location:</strong> Pune, India</p>
+        <p>We’re just a call or message away.</p>
+      </div>
+      <div class="map">
+        <iframe title="Pune Map" src="https://www.google.com/maps?q=Pune%20India&output=embed" width="100%" height="100%" style="border:0" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Stavya Enterprise and Multi Services</div>
+      <div>Rentals • Real Estate • IT</div>
+    </div>
+  </footer>
+</body>
+</html>
