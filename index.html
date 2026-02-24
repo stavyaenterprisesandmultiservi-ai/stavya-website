@@ -1,154 +1,584 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stavya Enterprise and Multi Services</title>
-  <meta name="description" content="Stavya Enterprise and Multi Services – Rentals, Real Estate & IT Services in Pune, India." />
+  <title>Stavya Enterprise & Multi Services | Rentals & IT Services in Pune</title>
+  <meta name="description" content="Stavya Enterprise & Multi Services in Pune: Projector rental, car/bike rental, property rent/sale, and IT services. Quick WhatsApp enquiry. Call 9359394297." />
+  <meta name="keywords" content="Projector Rental Pune, Car Rental Pune, Bike Rental Pune, Property Rent Pune, Property Sale Pune, IT Services Pune, Stavya Enterprise" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Stavya Enterprise & Multi Services" />
+  <meta property="og:description" content="Projector rental, car/bike rental, property rent/sale, and IT services in Pune. Enquire on WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <!-- Basic security headers (static-site friendly) -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
+                 img-src 'self' data: https:;
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                 script-src 'self' 'unsafe-inline';
+                 connect-src 'self';
+                 base-uri 'self';
+                 form-action 'self';
+                 frame-ancestors 'none';
+                 upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Stavya Enterprise & Multi Services",
+    "telephone":"+91-9359394297",
+    "email":"stavyaenterprisesandmultiservi@gmail.com",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Pune",
+      "addressRegion":"Maharashtra",
+      "addressCountry":"IN"
+    },
+    "areaServed":"Pune, Maharashtra"
+  }
+  </script>
+
   <style>
     :root{
-      --primary:#0b5ed7;
-      --dark:#0a2540;
-      --light:#f5f7fb;
-      --text:#2b2f38;
-      --card:#ffffff;
+      --bg:#070a12; --panel:rgba(255,255,255,.06); --panel2:rgba(255,255,255,.08);
+      --text:rgba(255,255,255,.92); --muted:rgba(255,255,255,.68);
+      --line:rgba(255,255,255,.12);
+      --brand:#f5c96a; --brand2:#ffe2a3;
+      --shadow:0 16px 50px rgba(0,0,0,.55);
+      --radius:22px;
+    }
+    [data-theme="light"]{
+      --bg:#f7f7fb; --panel:rgba(0,0,0,.05); --panel2:rgba(0,0,0,.06);
+      --text:rgba(0,0,0,.88); --muted:rgba(0,0,0,.62);
+      --line:rgba(0,0,0,.12);
+      --shadow:0 18px 45px rgba(0,0,0,.18);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);background:var(--light);line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:1200px;margin:auto;padding:0 20px}
-    /* Header */
-    header{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{font-weight:700;font-size:20px}
-    .nav a{margin-left:16px;opacity:.95}
-    .hero{padding:64px 0 72px}
-    .hero h1{font-size:40px;line-height:1.2;margin:0 0 10px}
-    .hero p{font-size:18px;opacity:.95;max-width:720px}
-    .cta{margin-top:22px}
-    .btn{display:inline-block;background:#fff;color:var(--dark);padding:12px 18px;border-radius:8px;font-weight:600;margin-right:10px}
-    .btn.secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
-    /* Sections */
-    section{padding:64px 0}
-    .section-title{font-size:28px;margin-bottom:10px;color:var(--dark)}
-    .section-sub{color:#5b6374;max-width:720px}
-    /* Cards */
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
-    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 10px 24px rgba(10,37,64,.08)}
-    .card h3{margin-top:0;color:var(--dark)}
-    /* About */
-    .about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-    .badge{display:inline-block;background:rgba(11,94,215,.1);color:var(--primary);padding:6px 10px;border-radius:999px;font-weight:600;margin-bottom:10px}
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .info p{margin:8px 0}
-    .map{border-radius:14px;overflow:hidden;box-shadow:0 10px 24px rgba(10,37,64,.08)}
-    /* Footer */
-    footer{background:#0a2540;color:#c9d4ff}
-    footer .container{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
-    /* Responsive */
-    @media (max-width: 900px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .about,.contact{grid-template-columns:1fr}
-      .hero h1{font-size:32px}
+    body{
+      margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:radial-gradient(900px 500px at 10% 5%, rgba(245,201,106,.18), transparent 55%),
+                 radial-gradient(800px 450px at 90% 0%, rgba(255,226,163,.10), transparent 55%),
+                 radial-gradient(800px 500px at 50% 110%, rgba(245,201,106,.10), transparent 55%),
+                 var(--bg);
+      color:var(--text); overflow-x:hidden;
     }
-    @media (max-width: 520px){
-      .grid{grid-template-columns:1fr}
-      .nav{flex-direction:column;align-items:flex-start}
-      .nav a{margin:8px 12px 0 0}
+    .container{max-width:1150px;margin:0 auto;padding:0 18px}
+    a{color:inherit;text-decoration:none}
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      backdrop-filter:blur(14px);
+      background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.2));
+      border-bottom:1px solid var(--line);
     }
+    [data-theme="light"] .topbar{background:linear-gradient(to bottom, rgba(255,255,255,.8), rgba(255,255,255,.55))}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:230px}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg, rgba(245,201,106,.35), rgba(255,226,163,.18));
+      border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    .brand h1{font-size:14px;margin:0;line-height:1.1}
+    .brand p{margin:3px 0 0;font-size:12px;color:var(--muted)}
+    .navlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .pill{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);
+      color:var(--muted);font-weight:600;font-size:12px}
+    .actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;min-width:230px}
+    .btn{border:none;cursor:pointer;padding:10px 13px;border-radius:999px;font-weight:800;font-size:12px;color:#1a1407;
+      background:linear-gradient(135deg, var(--brand), var(--brand2))}
+    .ghost{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--line)}
+    .hero{padding:54px 0 22px}
+    .heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    @media(max-width:900px){.heroGrid{grid-template-columns:1fr}.brand,.actions{min-width:auto}}
+    .card{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .cardPad{padding:22px}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);color:var(--muted);font-size:12px;font-weight:700}
+    .tagDot{width:8px;height:8px;border-radius:99px;background:var(--brand);box-shadow:0 0 0 4px rgba(245,201,106,.12)}
+    .headline{font-size:42px;line-height:1.05;margin:14px 0 10px;letter-spacing:-.02em}
+    @media(max-width:520px){.headline{font-size:34px}}
+    .sub{color:var(--muted);margin:0 0 18px;font-size:14.5px;line-height:1.55}
+    .heroBtns{display:flex;gap:10px;flex-wrap:wrap}
+    section{padding:18px 0}
+    .sectionTitle{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
+    .sectionTitle h2{margin:0;font-size:18px}
+    .sectionTitle p{margin:0;color:var(--muted);font-size:12.5px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+    .service{grid-column:span 6;padding:16px;border-radius:var(--radius);border:1px solid var(--line);
+      background:rgba(255,255,255,.04)}
+    @media(max-width:900px){.service{grid-column:span 12}}
+    .service .icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;border:1px solid var(--line);
+      background:rgba(255,255,255,.05);margin-bottom:10px;font-size:20px}
+    .service h3{margin:0 0 6px;font-size:15px}
+    .service p{margin:0 0 12px;color:var(--muted);font-size:12.8px;line-height:1.55}
+    .service .row{display:flex;gap:10px;flex-wrap:wrap}
+    .service .sm{padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);
+      color:var(--text);font-weight:800;font-size:12px;cursor:pointer}
+    .service .sm.primary{border-color:rgba(245,201,106,.45);background:linear-gradient(135deg, rgba(245,201,106,.25), rgba(255,226,163,.08))}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:900px){.split{grid-template-columns:1fr}}
+    .mini{border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.04);padding:16px}
+    .mini h3{margin:0 0 6px;font-size:14px}
+    .mini p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.5}
+    footer{margin-top:18px;border-top:1px solid var(--line);padding:20px 0 40px;color:var(--muted);font-size:12.5px}
+    .footGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+    @media(max-width:900px){.footGrid{grid-template-columns:1fr}}
+    .footCard{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:var(--radius);padding:16px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .links a{padding:8px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:var(--text);font-weight:800;font-size:12px}
+    .wa{position:fixed;right:16px;bottom:16px;z-index:80;display:flex;gap:10px;align-items:center}
+    .wa .bubble{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(0,0,0,.45);
+      color:var(--text);font-weight:800;font-size:12px;backdrop-filter:blur(10px)}
+    [data-theme="light"] .wa .bubble{background:rgba(255,255,255,.8)}
+    .wa .fab{width:52px;height:52px;border-radius:18px;border:none;cursor:pointer;background:linear-gradient(135deg,#25d366,#1fb857);
+      display:grid;place-items:center;font-size:22px}
+    .reveal{opacity:0;transform:translateY(10px);transition:.55s ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+    /* Modal */
+    .modalWrap{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);padding:18px}
+    .modal{width:min(820px,100%);border-radius:26px;border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(20,22,34,.96), rgba(10,12,22,.94));overflow:hidden;
+      transform:translateY(10px);opacity:0;transition:.18s ease}
+    [data-theme="light"] .modal{background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(245,245,250,.94))}
+    .modalHead{padding:16px 18px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line)}
+    .modalHead h3{margin:0;font-size:16px}
+    .modalHead p{margin:6px 0 0;color:var(--muted);font-size:12.5px;line-height:1.45}
+    .x{border:none;cursor:pointer;width:40px;height:40px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text);font-weight:900}
+    .modalBody{padding:16px 18px}
+    .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media(max-width:720px){.formGrid{grid-template-columns:1fr}}
+    label{display:block;font-size:12px;color:var(--muted);font-weight:800;margin:6px 0}
+    input,select,textarea{width:100%;padding:12px 12px;border-radius:14px;border:1px solid var(--line);
+      background:rgba(255,255,255,.06);color:var(--text);outline:none;font-family:inherit;font-weight:600}
+    textarea{min-height:92px;resize:vertical}
+    .modalActions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;padding:14px 18px;border-top:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .note{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.45}
   </style>
 </head>
-<body>
-  <header>
+
+<body data-theme="dark">
+  <header class="topbar">
     <div class="container nav">
-      <div class="brand">Stavya Enterprise & Multi Services</div>
-      <div>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-    <div class="container hero">
-      <h1>Your One‑Stop Solution for Rentals, Real Estate & IT Services</h1>
-      <p>Based in Pune, India — fast response, transparent pricing, and dependable service across vehicle & equipment rentals, property solutions, and IT support.</p>
-      <div class="cta">
-        <a class="btn" href="tel:9359394297">Call Now</a>
-        <a class="btn secondary" href="https://wa.me/919359394297" target="_blank">WhatsApp</a>
+      <a class="brand" href="#top">
+        <div class="logo"><img src="logo.png" alt="Logo" onerror="this.style.display='none'"></div>
+        <div>
+          <h1>Stavya Enterprise & Multi Services</h1>
+          <p>Pune, Maharashtra • Rentals & IT Services</p>
+        </div>
+      </a>
+      <nav class="navlinks">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" id="themeBtn" type="button">🌙 Theme</button>
+        <button class="btn" id="quickEnqBtn" type="button">WhatsApp Enquiry</button>
       </div>
     </div>
   </header>
 
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-sub">Clear, reliable solutions designed to save you time and money.</p>
-      <div class="grid">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Car and Bike Rental" style="width:100%;border-radius:10px;margin-bottom:12px">
-          <h3>🚗 Car & Bike Rental</h3>
-          <p>Well‑maintained vehicles available on daily, weekly, and monthly plans for personal and business needs.</p>
+  <main id="top">
+    <section class="hero">
+      <div class="container heroGrid">
+        <div class="card reveal">
+          <div class="cardPad">
+            <div class="tag"><span class="tagDot"></span> Fast response on WhatsApp</div>
+            <h2 class="headline">Rentals, Property & IT — in Pune.</h2>
+            <p class="sub">Projector rental, Car/Bike rental, Property rent/sale, and IT services. Fill details → WhatsApp message auto-ready.</p>
+            <div class="heroBtns">
+              <a class="btn" href="#services">Explore Services</a>
+              <a class="btn ghost" href="tel:+919359394297">Call Now</a>
+              <a class="btn ghost" href="mailto:stavyaenterprisesandmultiservi@gmail.com">Email</a>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Projector Rental" style="width:100%;border-radius:10px;margin-bottom:12px">
-          <h3>📽️ Projector Rental</h3>
-          <p>High‑quality projectors for meetings, events, presentations, and functions with on‑time delivery.</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1560185008-5b7a3a2a3b22" alt="Real Estate Services" style="width:100%;border-radius:10px;margin-bottom:12px">
-          <h3>🏠 Real Estate Services</h3>
-          <p>House rentals, land & house sales, and honest property consultation with transparent dealings.</p>
-        </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="IT Services" style="width:100%;border-radius:10px;margin-bottom:12px">
-          <h3>💻 IT Services</h3>
-          <p>IT support, website services, and digital solutions to help businesses operate and grow smoothly.</p>
+        <div class="card reveal">
+          <div class="cardPad">
+            <div class="mini">
+              <h3>Quick Quote</h3>
+              <p>Choose a service and send enquiry in 30 seconds.</p>
+              <div class="heroBtns" style="margin-top:10px">
+                <button class="btn ghost" data-open="projector">📽️ Projector</button>
+                <button class="btn ghost" data-open="vehicle">🚗 Car/Bike</button>
+                <button class="btn ghost" data-open="property">🏠 Property</button>
+                <button class="btn ghost" data-open="it">💻 IT</button>
+              </div>
+              <div class="note">Security gate added to reduce fake enquiries.</div>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="container about">
-      <div>
-        <span class="badge">About Us</span>
-        <h2 class="section-title">Built on Trust & Speed</h2>
-        <p>Stavya Enterprise and Multi Services brings multiple essential services under one roof. Our focus is customer satisfaction, quick response, and fair pricing — whether you need a vehicle, equipment, property help, or IT support.</p>
-        <p><strong>Location:</strong> Pune, India</p>
+    <section id="services">
+      <div class="container">
+        <div class="sectionTitle">
+          <div>
+            <h2>Services</h2>
+            <p>Tap Enquire Now → fill details → WhatsApp opens</p>
+          </div>
+          <div class="tag"><span class="tagDot"></span> WhatsApp: 9359394297</div>
+        </div>
+        <div class="grid">
+          <article class="service reveal">
+            <div class="icon">📽️</div>
+            <h3>Projector Rental</h3>
+            <p>For movies, presentations, meetings & events.</p>
+            <div class="row"><button class="sm primary" data-open="projector">Enquire Now</button></div>
+          </article>
+          <article class="service reveal">
+            <div class="icon">🚗</div>
+            <h3>Car / Bike Rental</h3>
+            <p>Choose car or bike. Share pickup date/time.</p>
+            <div class="row"><button class="sm primary" data-open="vehicle">Enquire Now</button></div>
+          </article>
+          <article class="service reveal">
+            <div class="icon">🏠</div>
+            <h3>Property Rent / Sale</h3>
+            <p>Share requirement, area and budget range.</p>
+            <div class="row"><button class="sm primary" data-open="property">Enquire Now</button></div>
+          </article>
+          <article class="service reveal">
+            <div class="icon">💻</div>
+            <h3>IT Services</h3>
+            <p>Website/support/setup and small business IT.</p>
+            <div class="row"><button class="sm primary" data-open="it">Enquire Now</button></div>
+          </article>
+        </div>
       </div>
-      <div class="card">
-        <h3>Why Choose Us</h3>
-        <ul>
-          <li>Fast response & easy communication</li>
-          <li>Transparent pricing</li>
-          <li>Flexible rental plans</li>
-          <li>Professional, local support</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container contact">
-      <div class="card info">
-        <h2 class="section-title">Contact Us</h2>
-        <p><strong>Phone:</strong> 9359394297</p>
-        <p><strong>Email:</strong> stavyaenterprisesandmultiservi@gmail.com</p>
-        <p><strong>Location:</strong> Pune, India</p>
-        <p>We’re just a call or message away.</p>
+    <section id="about">
+      <div class="container split">
+        <div class="card reveal"><div class="cardPad">
+          <h2 style="margin:0 0 10px">About Us</h2>
+          <p class="sub" style="margin:0"><b>Stavya Enterprise & Multi Services</b> is Pune-based. We provide fast coordination via WhatsApp with clear communication.</p>
+        </div></div>
+        <div class="card reveal"><div class="cardPad">
+          <h2 style="margin:0 0 10px">Why Choose Us</h2>
+          <div class="mini"><p style="margin:0;color:var(--muted)">Quick enquiry • Local Pune • Multi services • Transparent terms</p></div>
+        </div></div>
       </div>
-      <div class="map">
-        <iframe title="Pune Map" src="https://www.google.com/maps?q=Pune%20India&output=embed" width="100%" height="100%" style="border:0" loading="lazy"></iframe>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="container">
-      <div>© 2026 Stavya Enterprise and Multi Services</div>
-      <div>Rentals • Real Estate • IT</div>
+    <section id="contact">
+      <div class="container split">
+        <div class="card reveal"><div class="cardPad">
+          <h2 style="margin:0 0 10px">Contact</h2>
+          <div class="mini"><h3>📍 Location</h3><p>Pune, Maharashtra</p></div>
+          <div class="mini" style="margin-top:10px"><h3>📞 Phone</h3><p><b>9359394297</b></p></div>
+          <div class="mini" style="margin-top:10px"><h3>✉️ Email</h3><p><b>stavyaenterprisesandmultiservi@gmail.com</b></p></div>
+          <div class="heroBtns" style="margin-top:12px">
+            <button class="btn" id="contactWA" type="button">WhatsApp Now</button>
+            <a class="btn ghost" href="tel:+919359394297">Call</a>
+          </div>
+        </div></div>
+        <div class="card reveal"><div class="cardPad">
+          <h2 style="margin:0 0 10px">Quick Enquiry</h2>
+          <p class="sub" style="margin-top:0">Click any service enquiry button to send details on WhatsApp.</p>
+          <div class="mini"><p style="margin:0;color:var(--muted)">Security gate is inside enquiry popup.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footGrid">
+        <div class="footCard">
+          <b>Stavya Enterprise & Multi Services</b>
+          <div style="margin-top:8px;line-height:1.6">Projector • Car/Bike • Property • IT<br>Pune, Maharashtra • Phone: 9359394297</div>
+          <div class="links">
+            <a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footCard">
+          <b>Quick Actions</b>
+          <div class="links" style="margin-top:10px">
+            <a href="mailto:stavyaenterprisesandmultiservi@gmail.com">Email</a>
+            <a href="tel:+919359394297">Call</a>
+            <a href="#" id="footWA">WhatsApp</a>
+          </div>
+          <div class="note" style="margin-top:10px">© <span id="yr"></span> SE&MS</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="wa">
+    <div class="bubble">Need help? WhatsApp</div>
+    <button class="fab" id="waFab" title="WhatsApp">💬</button>
+  </div>
+
+  <div class="modalWrap" id="modalWrap" aria-hidden="true">
+    <div class="modal" id="modal">
+      <div class="modalHead">
+        <div>
+          <h3 id="mTitle">Enquiry</h3>
+          <p id="mDesc">Fill details and send on WhatsApp.</p>
+        </div>
+        <button class="x" id="mClose">✕</button>
+      </div>
+
+      <div class="modalBody">
+        <div class="formGrid" id="mFields"></div>
+
+        <!-- Security Gate -->
+        <div style="margin-top:10px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px;padding:12px">
+          <input id="m_hp" type="text" autocomplete="off" tabindex="-1"
+                 style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <label style="margin:0;display:flex;gap:10px;align-items:center;color:var(--text);font-weight:800">
+              <input id="m_human" type="checkbox" style="width:18px;height:18px">
+              I am not a robot
+            </label>
+            <div style="flex:1;min-width:220px">
+              <label style="margin:0 0 6px">Security Question</label>
+              <div style="display:flex;gap:10px;align-items:center">
+                <div id="m_mathQ" class="tag" style="margin:0"><span class="tagDot"></span> 2 + 5 = ?</div>
+                <input id="m_mathA" inputmode="numeric" placeholder="Answer" style="max-width:160px">
+              </div>
+            </div>
+          </div>
+          <div class="note" style="margin-top:10px">Helps block bots & fake enquiries.</div>
+        </div>
+
+        <p class="note" id="mNote"></p>
+      </div>
+
+      <div class="modalActions">
+        <button class="btn ghost" id="mReset" type="button">Reset</button>
+        <button class="btn" id="mSend" type="button">Send on WhatsApp</button>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <script>
+    const SETTINGS = {
+      businessName:"Stavya Enterprise & Multi Services",
+      whatsappNumberIntlNoPlus:"919359394297"
+    };
+    const $ = (q, el=document) => el.querySelector(q);
+    const $$ = (q, el=document) => [...el.querySelectorAll(q)];
+
+    function waLink(message){
+      return `https://wa.me/${SETTINGS.whatsappNumberIntlNoPlus}?text=${encodeURIComponent(message)}`;
+    }
+    function openWA(message){ window.open(waLink(message), "_blank", "noopener,noreferrer"); }
+    function todayISO(){
+      const d = new Date();
+      const tzOffset = d.getTimezoneOffset() * 60000;
+      const local = new Date(d - tzOffset);
+      return local.toISOString().slice(0,10);
+    }
+
+    // Theme
+    const themeBtn = $("#themeBtn");
+    const storedTheme = localStorage.getItem("sems_theme");
+    if(storedTheme) document.body.setAttribute("data-theme", storedTheme);
+    themeBtn.textContent = document.body.getAttribute("data-theme")==="light" ? "☀️ Theme" : "🌙 Theme";
+    themeBtn.addEventListener("click", ()=>{
+      const now = document.body.getAttribute("data-theme");
+      const next = now==="light" ? "dark" : "light";
+      document.body.setAttribute("data-theme", next);
+      localStorage.setItem("sems_theme", next);
+      themeBtn.textContent = next==="light" ? "☀️ Theme" : "🌙 Theme";
+    });
+
+    // Reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("show"); });
+    }, {threshold:.12});
+    $$(".reveal").forEach(el=> io.observe(el));
+
+    // WhatsApp buttons
+    $("#quickEnqBtn").addEventListener("click", ()=> openWA(`Hi ${SETTINGS.businessName}, I want to enquire about your services.`));
+    $("#contactWA").addEventListener("click", ()=> openWA(`Hi ${SETTINGS.businessName}, I want to enquire. Please share details.`));
+    $("#waFab").addEventListener("click", ()=> openWA(`Hi ${SETTINGS.businessName}, I need help. Please contact me.`));
+    $("#footWA").addEventListener("click", (e)=>{ e.preventDefault(); openWA(`Hi ${SETTINGS.businessName}, I want to enquire.`); });
+    $("#yr").textContent = new Date().getFullYear();
+
+    // Modal + Forms
+    const modalWrap = $("#modalWrap"), modal = $("#modal");
+    const mTitle = $("#mTitle"), mDesc = $("#mDesc"), mFields = $("#mFields"), mNote = $("#mNote");
+    let activeKey = null;
+
+    const FORMS = {
+      projector:{ title:"Projector Rental Enquiry", desc:"Share date/time and purpose.", note:"WhatsApp opens → press Send.",
+        fields:[
+          {id:"name",label:"Your Name",type:"text",required:true},
+          {id:"phone",label:"Phone Number",type:"text",required:true},
+          {id:"date",label:"Date",type:"date",required:true},
+          {id:"purpose",label:"Purpose",type:"select",options:["Movie Night","Presentation","Event","Other"],required:true},
+          {id:"message",label:"Extra Message",type:"textarea",required:false}
+        ],
+        build:(v)=>`Hi ${SETTINGS.businessName}, I want Projector on Rent.\nName: ${v.name}\nPhone: ${v.phone}\nDate: ${v.date}\nPurpose: ${v.purpose}\nMessage: ${v.message||"-"}`
+      },
+      vehicle:{ title:"Car / Bike Rental Enquiry", desc:"Choose car/bike and share pickup date/time.", note:"We will confirm availability & charges.",
+        fields:[
+          {id:"type",label:"Vehicle Type",type:"select",options:["Car","Bike"],required:true},
+          {id:"name",label:"Your Name",type:"text",required:true},
+          {id:"phone",label:"Phone Number",type:"text",required:true},
+          {id:"date",label:"Pickup Date",type:"date",required:true},
+          {id:"message",label:"Extra Message",type:"textarea",required:false}
+        ],
+        build:(v)=>`Hi ${SETTINGS.businessName}, I want ${v.type} on Rent.\nName: ${v.name}\nPhone: ${v.phone}\nPickup Date: ${v.date}\nMessage: ${v.message||"-"}`
+      },
+      property:{ title:"Property Rent / Sale Enquiry", desc:"Share requirement, area and budget.", note:"We will guide you with options.",
+        fields:[
+          {id:"need",label:"You need",type:"select",options:["Rent Property","Buy Property","Sell Property","Rent Out Property"],required:true},
+          {id:"name",label:"Your Name",type:"text",required:true},
+          {id:"phone",label:"Phone Number",type:"text",required:true},
+          {id:"area",label:"Preferred Area",type:"text",required:true},
+          {id:"budget",label:"Budget Range",type:"text",required:false},
+          {id:"message",label:"Extra Message",type:"textarea",required:false}
+        ],
+        build:(v)=>`Hi ${SETTINGS.businessName}, Property Enquiry (${v.need}).\nName: ${v.name}\nPhone: ${v.phone}\nArea: ${v.area}\nBudget: ${v.budget||"-"}\nMessage: ${v.message||"-"}`
+      },
+      it:{ title:"IT Services Enquiry", desc:"Tell your requirement (website/support/setup).", note:"We will reply with solution & quote.",
+        fields:[
+          {id:"service",label:"Service Type",type:"select",options:["Website","Tech Support","Setup","Other"],required:true},
+          {id:"name",label:"Your Name",type:"text",required:true},
+          {id:"phone",label:"Phone Number",type:"text",required:true},
+          {id:"message",label:"Describe requirement",type:"textarea",required:true}
+        ],
+        build:(v)=>`Hi ${SETTINGS.businessName}, IT Services Enquiry.\nService: ${v.service}\nName: ${v.name}\nPhone: ${v.phone}\nRequirement: ${v.message}`
+      }
+    };
+
+    function renderField(f){
+      const wrap = document.createElement("div");
+      wrap.style.gridColumn = f.type==="textarea" ? "span 2" : "auto";
+      const lab = document.createElement("label");
+      lab.textContent = f.label + (f.required ? " *" : "");
+      wrap.appendChild(lab);
+      let el;
+      if(f.type==="select"){
+        el = document.createElement("select");
+        f.options.forEach(opt=>{
+          const o = document.createElement("option"); o.value=opt; o.textContent=opt; el.appendChild(o);
+        });
+      } else if(f.type==="textarea"){
+        el = document.createElement("textarea");
+      } else {
+        el = document.createElement("input");
+        el.type = f.type || "text";
+        if(f.type==="date") el.value = todayISO();
+      }
+      el.id = `m_${f.id}`;
+      el.dataset.required = f.required ? "1":"0";
+      wrap.appendChild(el);
+      return wrap;
+    }
+
+    function openModal(key){
+      activeKey = key;
+      const cfg = FORMS[key];
+      mTitle.textContent = cfg.title;
+      mDesc.textContent = cfg.desc;
+      mNote.textContent = cfg.note;
+
+      mFields.innerHTML = "";
+      cfg.fields.forEach(f=> mFields.appendChild(renderField(f)));
+
+      newCaptcha();
+
+      modalWrap.style.display = "flex";
+      modalWrap.setAttribute("aria-hidden","false");
+      requestAnimationFrame(()=>{ modal.style.opacity="1"; modal.style.transform="translateY(0)"; });
+      document.body.style.overflow="hidden";
+    }
+    function closeModal(){
+      modal.style.opacity="0"; modal.style.transform="translateY(10px)";
+      setTimeout(()=>{
+        modalWrap.style.display="none";
+        modalWrap.setAttribute("aria-hidden","true");
+        document.body.style.overflow="";
+      }, 160);
+    }
+
+    $("#mClose").addEventListener("click", closeModal);
+    modalWrap.addEventListener("click", (e)=>{ if(e.target===modalWrap) closeModal(); });
+    window.addEventListener("keydown",(e)=>{ if(e.key==="Escape" && modalWrap.style.display==="flex") closeModal(); });
+
+    function validateModal(){
+      let ok = true;
+      $$("#mFields [data-required='1']").forEach(el=>{
+        if(!String(el.value||"").trim()){ ok=false; el.style.borderColor="rgba(255,90,90,.9)"; setTimeout(()=>el.style.borderColor="",900); }
+      });
+      return ok;
+    }
+    function readValues(){
+      const cfg = FORMS[activeKey]; const out = {};
+      cfg.fields.forEach(f=> out[f.id] = ( $(`#m_${f.id}`)?.value || "" ).trim());
+      return out;
+    }
+
+    // SECURITY GATES
+    let CAPTCHA = {a:2,b:5,ans:7};
+    let lastSendAt = 0;
+
+    function newCaptcha(){
+      CAPTCHA.a = Math.floor(Math.random()*8)+2;
+      CAPTCHA.b = Math.floor(Math.random()*8)+2;
+      CAPTCHA.ans = CAPTCHA.a + CAPTCHA.b;
+      $("#m_mathQ").innerHTML = `<span class="tagDot"></span> ${CAPTCHA.a} + ${CAPTCHA.b} = ?`;
+      $("#m_mathA").value = "";
+      $("#m_human").checked = false;
+      $("#m_hp").value = "";
+    }
+    function securityGateOk(){
+      if(($("#m_hp").value||"").trim()) return {ok:false, reason:"Bot detected."};
+      if(!$("#m_human").checked) return {ok:false, reason:"Please tick 'I am not a robot'."};
+      const ans = ($("#m_mathA").value||"").trim();
+      if(!ans) return {ok:false, reason:"Please answer the security question."};
+      if(Number(ans)!==CAPTCHA.ans) return {ok:false, reason:"Wrong security answer. Try again."};
+      const now = Date.now();
+      if(now - lastSendAt < 8000) return {ok:false, reason:"Please wait a few seconds and try again."};
+      return {ok:true, reason:""};
+    }
+
+    $("#mReset").addEventListener("click", ()=>{
+      const cfg = FORMS[activeKey];
+      cfg.fields.forEach(f=>{
+        const el = $(`#m_${f.id}`);
+        if(!el) return;
+        if(f.type==="date") el.value = todayISO();
+        else if(f.type==="select") el.selectedIndex = 0;
+        else el.value = "";
+      });
+      newCaptcha();
+    });
+
+    $("#mSend").addEventListener("click", ()=>{
+      if(!activeKey) return;
+      if(!validateModal()) return;
+
+      const gate = securityGateOk();
+      if(!gate.ok){ alert(gate.reason); newCaptcha(); return; }
+
+      lastSendAt = Date.now();
+      const cfg = FORMS[activeKey];
+      const v = readValues();
+
+      const digits = (v.phone||"").replace(/\D/g,"");
+      if(digits && digits.length < 10){ alert("Please enter a valid 10-digit phone number."); return; }
+
+      openWA(cfg.build(v));
+      closeModal();
+    });
+
+    $$("[data-open]").forEach(btn=>{
+      btn.addEventListener("click", ()=> openModal(btn.dataset.open));
+    });
+  </script>
 </body>
 </html>
